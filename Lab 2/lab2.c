@@ -34,7 +34,7 @@ typedef struct _targs {
 } targs;
 
 /* Função de Multiplicação de Matrizes por thread *
- * Cada thread é responsável por calcular uma linha da matriz S de saída
+ * Cada thread é responsável por calcular uma linha da matriz C de saída
  * Abordagem intercalada, ou seja, cada thread executa essa função
  * de maneira intercalada com as demais threads, até que a matriz de saída seja
  * construída.
