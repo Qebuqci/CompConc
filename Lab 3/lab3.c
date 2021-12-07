@@ -130,7 +130,8 @@ int main(int argc, char *argv[])
         Tseq  = fimS - inicioS;
         Tconc = fimC - inicioC;
         ganho = (Tseq / Tconc);
-        fprintf(stdout, "[%.2f,%.2f]:%d\t\t%lf\t\t\t1\t\t\t\t%lf\t\t%d\t\t%lf\n", limiar_inferior, limiar_superior, encontrados_conc, Tseq, Tconc, nthreads, ganho);
+        fprintf(stdout, "[%.2f,%.2f]:%d\t\t%lf\t\t\t1\t\t\t\t%lf\t\t%d\t\t%lf\n", limiar_inferior, limiar_superior, encontrados_conc, 
+                            Tseq, Tconc, nthreads, ganho);
     }
     else {
         fprintf(stderr, "Os valores encontrados sequencial e concorrente não conferem!\n");
@@ -144,7 +145,7 @@ int main(int argc, char *argv[])
     return 0;
     
 }
-/** Confere se o número de valores do vetor no intervalo
+/** Confere se a quantidade de valores no intervalo
  *  são iguais, pela implementação sequencial e 
  *  pela implementação concorrente.
  **/
