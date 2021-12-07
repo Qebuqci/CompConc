@@ -46,7 +46,7 @@ void *encontra_valores(void *arg)
     
     // Encontra valores 
     for (long long int i = ini_bloco_thread; i < fim_bloco_thread; i++) {
-        if (vetor[i] >= limiar_inferior && vetor[i] <= limiar_superior)
+        if (vetor[i] > limiar_inferior && vetor[i] < limiar_superior)
            *(encontrados_locais) += 1;
     }
     pthread_exit((void *) encontrados_locais);
@@ -84,20 +84,21 @@ int main(int argc, char *argv[])
     }
     
     // 3. Inicialização do vetor
-    for (int i = 0; i < N; i++)
-        vetor[i] = 2 * i;
-    
+    float j = 0;
+    for (int i = 0; i < N; j++, i++)
+        vetor[i] = j * 0.5;       // Foi colocado j * 0.5 para ficar facil conferir a corretude
+        
     // 4. Leitura do intervalo da entrada padrão (stdin)
     puts("Informe os extremos dos intervalos separados por espaço");
     fscanf(stdin, "%f %f", &limiar_inferior, &limiar_superior);
     
-    // 5. Encontra valores encontrados nesse intervalo [L_i, L_s]
+    // 5. Encontra valores encontrados nesse intervalo (L_i, L_s)
     // 5.1 Implementação Sequencial 
     GET_TIME(inicioS);
     encontrados_seq = 0;
     
     for (int i = 0; i < N; i++)
-        if (vetor[i] >= limiar_inferior && vetor[i] <= limiar_superior)
+        if (vetor[i] > limiar_inferior && vetor[i] < limiar_superior)
             encontrados_seq += 1;
     
     GET_TIME(fimS);
@@ -130,8 +131,8 @@ int main(int argc, char *argv[])
         Tseq  = fimS - inicioS;
         Tconc = fimC - inicioC;
         ganho = (Tseq / Tconc);
-        fprintf(stdout, "[%.2f,%.2f]:%d\t\t%lf\t\t\t1\t\t\t\t%lf\t\t%d\t\t%lf\n", limiar_inferior, limiar_superior, encontrados_conc, 
-                            Tseq, Tconc, nthreads, ganho);
+        fprintf(stdout, "(%.2f,%.2f):%d\t\t%lf\t\t\t1\t\t\t\t%lf\t\t%d\t\t%lf\n", limiar_inferior, limiar_superior, encontrados_conc, 
+                Tseq, Tconc, nthreads, ganho);
     }
     else {
         fprintf(stderr, "Os valores encontrados sequencial e concorrente não conferem!\n");
