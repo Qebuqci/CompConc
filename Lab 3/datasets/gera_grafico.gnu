@@ -1,6 +1,9 @@
-#------------------------------------------------
+#-------------------------------------------------------------------#
 # Script para gerar o gráfico das acelerações
-#------------------------------------------------
+#
+# Tal script usa os dados nos arquivos dataset-m10_d-t.dat
+# onde d é o indicador da dimensão do vetor e t do número de threads
+#-------------------------------------------------------------------#
 
 # Configurações para set o arquivo de saída do gráfico
 set term postscript eps color blacktext "Helvetica" 24
