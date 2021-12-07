@@ -10,8 +10,8 @@ set term postscript eps color blacktext "Helvetica" 24
 set output "gr_lab3.eps"
 
 # Configurações de título e labels
-set title  "Aceleracao (ganho) da Concorrencia"
-set ylabel "Tempo (em segundos)"
+set title "Ganho Concorrente = T_{seq}/T_{conc}"
+set ylabel "Aceleracao (ganho)"
 set xlabel "Dimensao dos vetores" offset 0,-1.5
 
 # Configurações de legenda
