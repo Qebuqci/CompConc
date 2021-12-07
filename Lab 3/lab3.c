@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
     GET_TIME(fimC);
     
     // 6. Exibição dos resultados em formato de tabela, cujas colunas são:
-    // [Li, Ls]: nº encontrados, Tseq, thread Principal, Tconc, nº Threads, ganho
+    // (Li, Ls): nº encontrados, Tseq, thread Principal, Tconc, nº Threads, ganho
     if (verifica_encontrados(encontrados_seq, encontrados_conc)) {
         Tseq  = fimS - inicioS;
         Tconc = fimC - inicioC;
