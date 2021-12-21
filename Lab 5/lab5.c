@@ -1,3 +1,12 @@
+/** Atividade 4 do Laboratório 5 de Computação Concorrente
+ * Aluno: Ricardo Kaê - DRE 116 039 521
+ * 
+ * Atividade resolvida usando duas variáveis de condição.
+ * Uma para controlar a impressão da Thread 5 e outra para 
+ * controlar a Thread 1.
+ * 
+ **/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
