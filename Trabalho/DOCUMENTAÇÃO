@@ -1,0 +1,42 @@
+Uso: ./integralc <MI> <N> <FE> <a> <b> <h> <nome_arquivo_parametros_funcao>
+
+# Programa Concorrente para integração numérica de funções elementares
+
+<MI> : MODO DE INTEGRAÇÃO. Tem 3 modos:
+	1 - Riemann
+	2 - Trapezoidal
+	3 - Simpson's Rule
+
+<N> Número de threads
+
+<FE> Número mágico da função elementar ou extra a ser integrada
+	Números mágicos de cada função elementar
+		POLINOMIO 1
+		SENO 2
+		COSSENO 3
+		TANGENTE 4
+		SECANTE 5
+		COSSECANTE 6
+		COTANGENTE 7
+		ARCOSENO 8
+		ARCOCOSSENO 9
+		ARCOTANGENTE 10
+		ARCOSECANTE 11
+		ARCOCOSSECANTE 12
+		ARCOCOTANGENTE 13
+		EXPONENCIAL 14
+		LN 15
+	Números mágicos das funções extra - começando a partir do 20
+		PI 20
+		EXPNX2 21
+		CNLTANEXP 22
+
+<a> Extremo esquerda do intervalo [a,b]
+<b> Extremo direita do intervalo [a,b]
+	b deve ser sempre maior que a
+
+<h> passo de integração (stepsize)
+<nome_arquivo> Nome do arquivo ASCII contendo uma única linha com os
+			   parametros de cada função
+
+	

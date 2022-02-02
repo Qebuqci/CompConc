@@ -1,0 +1,2 @@
+# COMPILAÇÃO
+gcc -lm -lpthread principal.c integral.c felementar.c fextras.c -o integralc
