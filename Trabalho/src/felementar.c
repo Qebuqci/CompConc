@@ -233,12 +233,13 @@ long double (*funcao(int numeroMagico, double *param))(double x,  double *param)
     else if (numeroMagico == ARCOCOTANGENTE)
         return acotangente;
     else if (numeroMagico == EXPONENCIAL) {
-        printf("f(x) = (%.2lf)e^(%.2lf * x)\n", param[0], param[1] );
+        printf("f(x) = (%.2lf)e^(%.2lf * x + %.2lf)\n", param[0], param[1], param[2] );
         return exponencial;
-        
     }
-    else if (numeroMagico == LN)
+    else if (numeroMagico == LN) {
+        printf("f(x) = (%.2lf)ln(%.2lf * x + %.2lf)\n", param[0], param[1], param[2] );
         return ln;
+    }
     else if (numeroMagico == PI) {
         printf("f(x) = sqrt(4 - x^2)\n");
         return pi;
